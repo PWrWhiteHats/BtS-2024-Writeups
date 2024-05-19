@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    <label for="title" style="">Title:</label><br />
+    <textarea name="title" id="title" value="{{ request.form['title'] }}" required style="margin-bottom: 20px; width: 50%; background-color: #2d2a2e; color: white;"></textarea><br />
+    <label for="body">Body</label><br />
+    <textarea name="body" id="body" required style="margin-bottom: 20px; width: 50%; height: 200px; background-color: #2d2a2e; color: white;">{{ request.form['body'] }}</textarea><br />
+    <input type="submit" value="Add Post" class="button">
+</form>
+{% endblock %}

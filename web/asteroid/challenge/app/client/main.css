@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+  padding: 10px;
+  font-family: 'Pixelify Sans', sans-serif;
+
+  background-color: #251a2b;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.asteroid-img {
+  width: 200px;
+  height: auto;
+}
+
+.urls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background-color: #f7f7f7;
+  color: #251a2b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+
+  width: 120px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #e0e0e0;
+}

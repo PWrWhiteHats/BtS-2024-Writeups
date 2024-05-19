@@ -1,0 +1,20 @@
+(And 1 x) = x
+(And 0 _) = 0
+
+
+(String.cmp String.nil String.nil) = 1
+(String.cmp String.nil _) = 0
+(String.cmp _ String.nil) = 0
+(String.cmp (String.cons x xs) (String.cons y ys)) =
+    (And (String.cmp xs ys) (== x y)
+)
+
+(To_string 1) = CorrectFlag
+(To_string 0) = IncorrectFlag
+
+(Main) =
+  (HVM.print "What is the flag?"
+  (HVM.query λname
+  (To_string (String.cmp "BtSCTF{TO0_M4NY_L1NK3D_L1ST5}" name))
+  ))
+  

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p style="color: gray;">id: {{ id }}</p>
+<h1>{{ title | safe }}</h1>
+<hr />
+<p style="margin-bottom: 50px;">{{ body | safe }}</p>
+<a href="/" class="button">Homepage</a>
+{% endblock %}

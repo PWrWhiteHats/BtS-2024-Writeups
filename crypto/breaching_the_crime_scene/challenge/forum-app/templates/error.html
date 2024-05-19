@@ -1,0 +1,33 @@
+<head>
+    <title>Silly forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="info-box">
+            <div class="info-box-title">
+                <span style="color:#FF0000">E</span><span style="color:#FF9900">r</span><span style="color:#CCFF00">r</span><span style="color:#33FF00">o</span><span style="color:#00FF66">r</span> <span style="color: {{color}};"> {{ error }} </span>
+            </div>
+
+            <div style="width: 100%;display: flex;">
+                <img src="data:image/png;base64, {{ img_base64 }}" alt="Error" style="margin: auto;">
+            </div>
+
+            <p>Oops! You silly goose! Something is wrong!</p>
+
+            <div style="width: 100%;display: flex;">
+                <input type="submit" value="Go back" onclick="window.location='/'">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    onImageResize = function() {
+        var errorImageWidth = document.querySelector('img').clientWidth;
+        var errorImageHeight = errorImageHeight;
+
+        console.log(errorImageWidth, errorImageHeight);
+    }
+</script>

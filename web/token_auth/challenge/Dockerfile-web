@@ -1,0 +1,15 @@
+FROM node:21-alpine3.19
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+
+EXPOSE 3000
+
+ENV JWT_SECRET=bc344cdc3385f34112400b4476ce103b1bbf4349cde930293c68e5afc58789eb \ 
+	FLAG=BtSCTF{W4tch_0ut,pr0t0typ3_15_th3r3!}
+
+CMD ["sh", "-c", "npm run prod"]

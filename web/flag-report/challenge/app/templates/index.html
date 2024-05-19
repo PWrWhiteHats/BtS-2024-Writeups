@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/create" class="button">New Post</a>
+<h2>Posts</h2>
+<hr>
+{% if posts == [] %}
+    <p>No posts! Press "New Post" button to create a post</p>
+{% else %}
+    {% for post in posts %}
+        <article class="post" style="margin-bottom: 30px;">
+            <header>
+                <div>
+                    <h1><a style="text-decoration: none; color: white;" href="/post/{{ post['id'] }}">{{ post['title'] }}</a></h1>
+                </div>
+            </header>
+            <p class="body">{{ post['body'] }}</p>
+            <a class="button" href="/post/{{ post['id'] }}">View Page</a>
+            <a class="button" href="{{ url_for('report', id=post['id']) }}">Report</a>
+        </article>
+        {% if not loop.last %}
+            <div style="border-bottom: 1px solid gray;"></div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

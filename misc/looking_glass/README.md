@@ -1,0 +1,1 @@
+During our last investigation we were able to access the suspect's machine and the only non-standard files here were some images. We were able to extract useful data from all of them except this one. Help us with solving this case by retrieving data hidden inside the last image.  

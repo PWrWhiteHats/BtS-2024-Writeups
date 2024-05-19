@@ -1,0 +1,9 @@
+[package]
+name = "little_rusty"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[profile.dev]
+strip = "debuginfo"
