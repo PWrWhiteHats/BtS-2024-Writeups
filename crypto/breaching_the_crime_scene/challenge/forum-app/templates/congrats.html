@@ -1,0 +1,19 @@
+<head>
+    <title>Silly forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>  
+    <div class="container">
+        <div class="info-box">
+            <div class="info-box-title">
+                Congratulations!
+            </div>
+            <div style="width: 100%;display: flex;">
+                <img src="{{ url_for('static', filename='resources/error/2.jpg') }}" alt="congrats" style="width: 90%; height: 90%; margin: auto;">
+            </div>
+            <p>Here's the flag:</p>
+            <p>{{ flag }}</p>
+        </div>
+    </div>
+</body>

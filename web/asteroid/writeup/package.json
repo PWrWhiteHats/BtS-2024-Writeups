@@ -1,0 +1,15 @@
+{
+  "name": "healthcheck",
+  "version": "1.0.0",
+  "description": "healthcheck",
+  "main": "healthcheck.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "brun0ne",
+  "license": "ISC",
+  "dependencies": {
+    "ddp": "^0.12.1"
+  },
+  "type": "module"
+}

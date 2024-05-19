@@ -1,0 +1,12 @@
+FROM mysql:8.0
+
+ENV MYSQL_DATABASE=token_auth \
+    MYSQL_USER=user \
+    MYSQL_PASSWORD=25CdBXS3ACGCnZ4sPTvTV8hJ \
+    MYSQL_ROOT_PASSWORD=25CdBXS3ACGCnZ4sPTvTV8hJ
+
+ADD init.sql /docker-entrypoint-initdb.d
+
+EXPOSE 3306
+
+CMD ["mysqld","--skip-performance-schema"]

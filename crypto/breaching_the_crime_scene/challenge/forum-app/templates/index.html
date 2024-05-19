@@ -1,0 +1,57 @@
+<head>
+    <title>Silly forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>  
+    <div class="container">
+        <div class="info-box">
+            <div class="info-box-title">
+                <span style="color:#FF0000">S</span><span style="color:#FF9900">i</span><span style="color:#CCFF00">l</span><span style="color:#33FF00">l</span><span style="color:#00FF66">y</span> <span style="color:#00FFFF">F</span><span style="color:#0066FF">o</span><span style="color:#3300FF">r</span><span style="color:#CC00FF">u</span><span style="color:#FF0099">m</span>
+            </div>
+            <p>Welcome to the Forum App!</p>
+            <p>Feel free to browse the forum and participate in the discussions, if you know the password.</p>
+            <p>Absolutely nothing suspicious here, don't sniff around if you are a cop!</p>
+            
+            <div style="width: 100%;display: flex;">
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <br>
+            <div style="width: 100%;display: flex;">
+                <input type="submit" value="Enter" onclick="onFormSubmit()">
+            </div>
+
+        </div>
+</body>
+
+<script>
+    onFormSubmit = function() {
+        var password = document.querySelector('input[name="password"]').value;
+        localStorage.setItem('password', password);
+
+        // send a post request to the server
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/forum', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send("password=" + password);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                //load the html response as a document
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(xhr.responseText, 'text/html');
+                document.open();
+                document.write(doc.documentElement.innerHTML);
+                document.close();
+            }
+        }
+    }
+
+    // on enter button press submit the form
+    document.querySelector('input[name="password"]').addEventListener('keyup', function(event) {
+        if (event.key === "Enter") {
+            onFormSubmit();
+        }
+    });
+</script>
+
